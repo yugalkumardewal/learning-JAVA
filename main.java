@@ -1,22 +1,25 @@
-import java.util.Scanner; // <-- 1. Added this import at the top
 
-public class main { // <-- 2. Capitalized 'Main' to match the file name
-    public static void main(String[] args) {
-        int num[] = new int[2];
-        Scanner scanner = new Scanner(System.in);
-        
-        System.out.println("Enter your Name: ");
-        String name = scanner.nextLine();
-        
-        System.out.println("Enter your Age: ");
-        int age = scanner.nextInt();
-        
-        num[0] = age;
-        num[1] = num[0] * 2;
-        
-        System.out.println("Your age is: " + num[0]);
-        System.out.println("Double your age is: " + num[1]);
-        
-        scanner.close(); // Good practice to close the scanner
-    }
+import java.util.Scanner;
+
+public class main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter Your Marks");
+        int marks = sc.nextInt();
+        if(marks >= 90 && marks <= 100){
+            System.out.println("Grade A \n Status: Exellent Work");
+        }
+        else if(marks >= 80 && marks <= 89){
+            System.out.println("Grade B \n Status: Good Work");
+        }
+        else if(marks >= 70 && marks <= 79){
+            System.out.println("Grade C \n Status: Fair Effort");
+        }
+        else if(marks >= 60 && marks <= 69){
+            System.out.println("Grade D \n Status: Needs Improvement");
+        }
+        else{
+            System.out.println("Grade F \n Status: Fail Try Again");
+        }
+    }   
 }
