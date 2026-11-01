@@ -1,25 +1,33 @@
-
 import java.util.Scanner;
 
-public class main{
-    public static void main(String[] args){
+public class main {
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter Your Marks");
-        int marks = sc.nextInt();
-        if(marks >= 90 && marks <= 100){
-            System.out.println("Grade A \n Status: Exellent Work");
+        int num[] = new int[5];
+        
+       
+        System.out.println("Enter 5 numbers:");
+        for(int i = 0; i < 5; i++) {
+            num[i] = sc.nextInt();
         }
-        else if(marks >= 80 && marks <= 89){
-            System.out.println("Grade B \n Status: Good Work");
+
+        int highest = num[0]; 
+        for(int i = 1; i < 5; i++) {
+            if(num[i] > highest) {
+                highest = num[i]; 
+            }
         }
-        else if(marks >= 70 && marks <= 79){
-            System.out.println("Grade C \n Status: Fair Effort");
+
+        double sum = 0;
+        for(int i = 0; i < 5; i++) {
+            sum += num[i]; 
         }
-        else if(marks >= 60 && marks <= 69){
-            System.out.println("Grade D \n Status: Needs Improvement");
-        }
-        else{
-            System.out.println("Grade F \n Status: Fail Try Again");
-        }
-    }   
+        double average = sum / 5; 
+
+        System.out.println("-------------------");
+        System.out.println("Highest Value : " + highest);
+        System.out.println("Average average : " + average);
+
+        sc.close();
+    }
 }
